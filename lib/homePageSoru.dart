@@ -2,7 +2,6 @@ import 'dart:io';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter/material.dart';
 import 'package:genel_kultur/utils/database_helper.dart';
-
 import 'models/genelkultur.dart';
 
 class SoruListesi extends StatelessWidget {

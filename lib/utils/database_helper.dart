@@ -75,4 +75,21 @@ class DatabaseHelper {
     }
     return soruListesi;
   }
+    
+    
+    
+    Future<List<Map<String, dynamic>>> sorulariGetir() async {
+    var db = await _getDatabase();
+    var sonuc = await db.query("bilgiler");
+    return sonuc;
+  }
+
+  Future<List<Bilgi>> bilgiListesiniGetir() async {
+    var bilgilerMapListesi = await bilgileriGetir();
+    var bilgiListesi = List<Soru>();
+    for (Map map in bilgilerMapListesi) {
+      bilgiListesi.add(Bilgi.fromMap(map));
+    }
+    return bilgiListesi;
+  }
 }

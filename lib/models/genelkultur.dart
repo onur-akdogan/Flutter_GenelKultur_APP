@@ -1,4 +1,3 @@
-
 class Soru {
   int soruID;
   String soru;
