@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:admob_flutter/admob_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter/material.dart';
 import 'package:genel_kultur/utils/database_helper.dart';
@@ -16,6 +17,7 @@ class SoruListesi extends StatelessWidget {
             style: TextStyle(fontSize: 22, fontFamily: "fredokaOne")),
         elevation: 0,
         centerTitle: true,
+        backgroundColor: Color(0xff2d3447),
       ),
       key: _scaffoldKey,
       body: Notlar(),
@@ -101,6 +103,17 @@ class _NotlarState extends State<Notlar> {
                                 ),
                               ),
                             ),
+                             AdmobBanner(
+                                adUnitId: "ca-app-pub-2062750101933669/2553303731",
+                                adSize: AdmobBannerSize.BANNER,
+                                listener: (AdmobAdEvent event,
+                                    Map<String, dynamic> args) {
+                                  handleEvent(event, args, 'Banner');
+                                },
+                                onBannerCreated:
+                                    (AdmobBannerController controller) {
+                                },
+                              ),
                             Container(
                               height: 50,
                               width: 200,
@@ -109,6 +122,7 @@ class _NotlarState extends State<Notlar> {
                                   Radius.circular(32),
                                 ),
                               ),
+                             
                               child: RaisedButton(
                                 onPressed: () {
                                   showDialog(
@@ -172,7 +186,7 @@ class _NotlarState extends State<Notlar> {
           } else {
             return Center(
               child: Text(
-                "Yükleniyor\nFrom: \n ONUR AKDOĞAN\n",
+                "Yükleniyor\n ONUR AKDOĞAN\n",
                 style: TextStyle(color: Colors.white, fontSize: 18),
               ),
             );
@@ -182,3 +196,30 @@ class _NotlarState extends State<Notlar> {
     );
   }
 }
+
+ GlobalKey<ScaffoldState> scaffoldState = GlobalKey();
+
+     AdmobBannerSize bannerSize;
+   AdmobInterstitial interstitialAd;
+   AdmobReward rewardAd;
+     void handleEvent(
+      AdmobAdEvent event, Map<String, dynamic> args, String adType) {
+    switch (event) {
+      case AdmobAdEvent.loaded:
+    
+        break;
+      case AdmobAdEvent.opened:
+    
+        break;
+      case AdmobAdEvent.closed:
+       
+        break;
+      case AdmobAdEvent.failedToLoad:
+  
+        break;
+      case AdmobAdEvent.rewarded:
+}
+}
+
+
+

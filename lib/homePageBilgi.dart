@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:admob_flutter/admob_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:genel_kultur/utils/database_helper.dart';
 import 'models/genelkulturbilgi.dart';
@@ -12,6 +13,7 @@ class BilgiListesi extends StatelessWidget {
             style: TextStyle(fontSize: 22, fontFamily: "fredokaOne")),
         elevation: 0,
         centerTitle: true,
+        backgroundColor: Color(0xff2d3447),
       ),
       body: Kartlar(),
     );
@@ -24,6 +26,7 @@ class Kartlar extends StatefulWidget {
 }
 
 class _KartlarState extends State<Kartlar> {
+ 
   List<Bilgi> tumBilgiler;
   DatabaseHelper databaseHelper;
 
@@ -43,7 +46,7 @@ class _KartlarState extends State<Kartlar> {
     tumBilgiler = List<Bilgi>();
     databaseHelper = DatabaseHelper();
   }
-
+    
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -67,6 +70,7 @@ class _KartlarState extends State<Kartlar> {
               controller: _controller,
               itemCount: tumBilgiler.length,
               itemBuilder: (context, index) {
+
                 debugPrint(tumBilgiler[index].bilgi);
                 return Center(
                   child: Padding(
@@ -81,8 +85,20 @@ class _KartlarState extends State<Kartlar> {
                           borderRadius: BorderRadius.all(Radius.circular(32))),
                       child: Center(
                         child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
+                           
+                             AdmobBanner(
+                                adUnitId: "ca-app-pub-2062750101933669/2974113740",
+                                adSize: AdmobBannerSize.BANNER,
+                                listener: (AdmobAdEvent event,
+                                    Map<String, dynamic> args) {
+                                  handleEvent(event, args, 'Banner');
+                                },
+                                onBannerCreated:
+                                    (AdmobBannerController controller) {
+                                },
+                              ),
                             Padding(
                               padding: const EdgeInsets.all(8.0),
                               child: Text(
@@ -107,7 +123,7 @@ class _KartlarState extends State<Kartlar> {
           } else {
             return Center(
               child: Text(
-                "Yükleniyor\nFrom:\nONUR AKDOĞAN\n",
+                "Yükleniyor\nONUR AKDOĞAN\n",
                 style: TextStyle(color: Colors.white, fontSize: 18),
               ),
             );
@@ -116,4 +132,31 @@ class _KartlarState extends State<Kartlar> {
       ),
     );
   }
+
+ GlobalKey<ScaffoldState> scaffoldState = GlobalKey();
+
+     AdmobBannerSize bannerSize;
+   AdmobInterstitial interstitialAd;
+   AdmobReward rewardAd;
+     void handleEvent(
+      AdmobAdEvent event, Map<String, dynamic> args, String adType) {
+    switch (event) {
+      case AdmobAdEvent.loaded:
+    
+        break;
+      case AdmobAdEvent.opened:
+    
+        break;
+      case AdmobAdEvent.closed:
+       
+        break;
+      case AdmobAdEvent.failedToLoad:
+  
+        break;
+      case AdmobAdEvent.rewarded:
 }
+}
+}
+
+
+
