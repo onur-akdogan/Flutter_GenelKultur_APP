@@ -89,7 +89,7 @@ class _KartlarState extends State<Kartlar> {
                           children: <Widget>[
                            
                              AdmobBanner(
-                                adUnitId: "ca-app-pub-2062750101933669/2974113740",
+                                adUnitId: "ca-app-pub-2062750101933669/4624701797",
                                 adSize: AdmobBannerSize.BANNER,
                                 listener: (AdmobAdEvent event,
                                     Map<String, dynamic> args) {

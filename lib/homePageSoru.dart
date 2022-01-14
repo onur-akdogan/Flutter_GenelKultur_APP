@@ -104,7 +104,7 @@ class _NotlarState extends State<Notlar> {
                               ),
                             ),
                              AdmobBanner(
-                                adUnitId: "ca-app-pub-2062750101933669/2553303731",
+                                adUnitId: "ca-app-pub-2062750101933669/4433130100",
                                 adSize: AdmobBannerSize.BANNER,
                                 listener: (AdmobAdEvent event,
                                     Map<String, dynamic> args) {
