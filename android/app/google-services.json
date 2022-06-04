@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "237041905236",
+    "project_id": "genel-kulturum",
+    "storage_bucket": "genel-kulturum.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:237041905236:android:23df1918056230b3dbc7c1",
+        "android_client_info": {
+          "package_name": "com.akdogan.genelkulturum"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "237041905236-o4r6encr2b4dg0obgocht43fqufa8qu8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmJ66cuw1mVuq5KK5vvfTVA-wyJVrWd-o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "237041905236-o4r6encr2b4dg0obgocht43fqufa8qu8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

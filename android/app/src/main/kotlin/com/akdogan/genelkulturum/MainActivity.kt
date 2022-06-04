@@ -1,4 +1,4 @@
-package com.example.genel_kultur
+package com.akdogan.genelkulturum
 
 import androidx.annotation.NonNull;
 import io.flutter.embedding.android.FlutterActivity

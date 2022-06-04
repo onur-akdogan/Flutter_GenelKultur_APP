@@ -7,11 +7,11 @@ import 'package:genel_kultur/selectPage.dart';
 import 'homePageBilgi.dart';
 import 'homePageSoru.dart';
 
-
+String _appID="ca-app-pub-3940256099942544~3347511713";
 void main() {
    WidgetsFlutterBinding.ensureInitialized();
   // Initialize without device test ids.
-  Admob.initialize();
+  Admob.initialize(_appID);
   
 runApp(MyApp());
 }
